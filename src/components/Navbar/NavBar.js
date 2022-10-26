@@ -1,26 +1,40 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Cartwidget from './cartwidget/CartWidget';
-import logo from "./images/logo.jpg"
-import "./NavBar.scss"
+import { Link } from "react-router-dom";
+import logo from "../images/logo.webp"
+import CartIcon from "../CartWidget"
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
     return (
-        <>
-       <Navbar bg="light" variant="light">
-        <Container>
-          <img className= "logoStyle" src={logo} alt=""/>
-          <Nav className="mx-auto">
-            <Nav.Link href="#inicio">Inicio</Nav.Link>
-            <Nav.Link href="#features">Almohadones</Nav.Link>
-            <Nav.Link href="#manteles">Manteles</Nav.Link>
-            <Nav.Link href="#bolsos">Bolsos</Nav.Link>
-          </Nav>
-          <Cartwidget/>
-        </Container>
-      </Navbar>
-      </>
+        <div className="bg-400 shadow text-gray">
+            <nav className='md:flex md:items-center md:justify-between'>
+                <div className="flex justify-between items-center">
+                    <span className="text-xl font-mono mx-4 p-5 font-['arial'] hover:text-gray-800 duration-500 cursor-pointer">
+                        <Link to={`/`} >
+                            <img className="h-10 inline mx-3" src={logo} alt="logo"></img>
+                        </Link>
+                    </span>
+                </div>
+
+                <ul className='md:flex md:items-center bg-500 md:bg-500  md:static w-full left-0 md:w-auto py-5 md:pl-0 pl-7'>
+                    <div className="md:flex py-1 text-sm text-gray-700 dark:text-gray-800">
+                        <div>
+                            <NavLink to={`/category/pillow`} className="block rounded-t-lg py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">pillow</NavLink>
+                        </div>
+                        <div>
+                            <NavLink to={`/category/bag`} className="block rounded-t-lg py-2 px-4 hover:bg-yellow-100 dark:hover:bg-gray-600 dark:hover:text-white">bag</NavLink>
+                        </div>
+                    </div>
+
+                    <li className="text-xl hover:text-black-800 duration-500 my-4 mx-4 md:my-0">
+                        <a href="#">Contacto</a>
+                    </li>
+                    <li className="text-xl hover:text-gray-800 duration-500 my-4 mx-4 md:my-0 ">
+                        <CartIcon />
+                    </li>
+                </ul>
+            </nav>
+        </div>
     );
 }
+
 export default NavBar;
