@@ -5,7 +5,7 @@ function ItemDetail(props) {
 
 
     return (
-        <div className='card md:mx-auto my-8'>
+        <div className='card md:mx-auto my-8 flex'>
             <div className="w-full max-w-sm bg-white dark:bg-gray-200">
                 <img className="p-3 rounded-t-lg" src={props.image} alt="productimage" />
                 <div className="px-5 pb-5 text-center">
@@ -26,7 +26,7 @@ function ItemDetail(props) {
 
             <div className="max-w-lg p-2 mx-auto bg-white dark:bg-gray-200 ">
 
-                <div className="mt-2">
+                <div className="card2 mt-2">
 
                     <div className="items-center mb-5">
                         <span className="text-s font-semibold mr-2 px-2.5 py-0.5 rounded text-gray"> {props.resena}</span>
