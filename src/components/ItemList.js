@@ -14,7 +14,7 @@ export default function ItemList(){
 
   //SIMULACION API
   const listado = () => {
-    let items = require("../Backend/productos.json")
+    let items = require("../json/productos.json")
     return new Promise ((resolve, reject) => {
         setTimeout(() => {
             resolve(items)
